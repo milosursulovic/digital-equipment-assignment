@@ -11,7 +11,7 @@ export async function createReversePdfBuffer(assignment) {
 
     doc.fontSize(20).text("Potvrda o zaduženju", { align: "center" });
     doc.moveDown();
-    doc.fontSize(12).text(`Ime: ${assignment.person.username}`);
+    doc.fontSize(12).text(`Ime: ${assignment.person.name}`);
     doc.text(`Datum: ${assignment.dateAssigned.toLocaleDateString()}`);
     doc.text(`Napomena: ${assignment.note || "Nema"}`);
     doc.text(`Pozicija: ${assignment.person.position || ""}`);
@@ -26,8 +26,8 @@ export async function createReversePdfBuffer(assignment) {
     });
 
     doc.moveDown();
-    doc.text("Potpis korisnika: ______________________");
-    doc.text("Potpis zaduženog lica: ________________");
+    doc.text("Predao:                 ______________________");
+    doc.text("Potpis zaduženog lica:  ______________________");
 
     doc.end();
   });
