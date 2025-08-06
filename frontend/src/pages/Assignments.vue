@@ -133,7 +133,7 @@ async function assign() {
 
 async function downloadPdf(id) {
     const token = localStorage.getItem('token')
-    const response = await fetch(`http://localhost:5000/api/reverse/pdf/${id}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reverse/pdf/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
